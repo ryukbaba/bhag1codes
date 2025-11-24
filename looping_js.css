@@ -1,0 +1,305 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: netflix_regular;
+    src: url(./NetflixSans-Regular.otf);
+}
+
+@font-face {
+    font-family: netflix_medium;
+    src: url(./NetflixSans-Medium.otf);
+}
+
+@font-face {
+    font-family: netflix_light;
+    src: url(./NetflixSans-Light.otf);
+}
+
+@font-face {
+    font-family: netflix_bold;
+    src: url(./NetflixSans-Bold.otf);
+}
+
+/* navigation side bar */
+
+/* The side navigation menu */
+/* Custom styles for the sidebar */
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 180px;
+    background-color: #202c3d;
+    padding-top: 20px;
+}
+
+.sidebar a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.sidebar a:hover {
+    background-color: #575d63;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+div.content {
+    /* margin-left: 200px; */
+    padding: 1px 16px;
+    height: 1000px;
+}
+
+.container {
+    width: 100%;
+    height: 50vh;
+    margin-top: 50px;
+}
+
+.banrap {
+    padding: 10px;
+    width: 80%;
+    margin: auto;
+    background: linear-gradient(to right, rgb(207, 128, 141), rgb(123, 180, 183), rgb(190, 149, 232));
+}
+
+/* video */
+.content {
+    width: 100%;
+    height: 60vh;
+
+}
+
+.contrap h1 {
+    width: 100%;
+    margin: auto;
+    font-family: 'netflix_medium', sans-serif;
+    /* background-color: #1f1c1c; */
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+.contrap img {
+    padding-left: 20px;
+}
+
+.video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background-size: cover;
+}
+
+.video-background video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+/* text 1 */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600");
+
+:root {
+    --bar-scale-y: 0;
+    --sparkle-color: rgb(253 244 215 / 40%);
+}
+
+@keyframes pop-word {
+    to {
+        transform: rotateX(0);
+    }
+}
+
+@keyframes show {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bar-scale {
+    to {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes sparkle {
+    0% {
+        transform: scale(0);
+    }
+
+    60% {
+        transform: scale(1) translate(4px, 1px) rotate(8deg);
+    }
+
+    100% {
+        transform: scale(0) translate(4px, 1px) rotate(8deg);
+    }
+}
+
+@keyframes shimmer {
+    to {
+        text-shadow: 0 0 8px red;
+    }
+}
+
+body {
+    display: grid;
+    height: 100vh;
+
+    background-color: black;
+    /* place-items: center; */
+    text-align: center;
+    /* padding-left: 80px; */
+}
+
+/* text 2 */
+
+h1 {
+    color: white;
+    font-family: 'netflix_medium', sans-serif;
+    font-size: 4rem;
+    line-height: 0.85;
+    padding-left: 200px;
+    /* border: 1px solid white; */
+    perspective: 500px;
+}
+
+.word {
+    display: block;
+
+    animation: show 0.01s forwards, pop-word 1.5s forwards;
+    animation-timing-function: cubic-bezier(0.14, 1.23, 0.33, 1.16);
+    opacity: 0;
+
+    transform: rotateX(120deg);
+    transform-origin: 50% 100%;
+    text-shadow: 10px 2px 10px #ff0000;
+}
+
+.word:nth-of-type(2) {
+    padding: 0 2rem;
+
+    animation-delay: 1.5s;
+
+    color: rgba(255, 255, 255, 0.718);
+}
+
+.superscript {
+    position: relative;
+    animation-delay: 3.6s;
+
+    animation-duration: 0.25s;
+    animation-name: shimmer;
+
+    vertical-align: text-top;
+}
+
+/* bars */
+.superscript::before {
+    --bar-width: 25%;
+
+    position: absolute;
+
+    top: 37%;
+    left: 47%;
+    width: 14%;
+    height: 48%;
+
+    animation: bar-scale 0.25s linear 3s 1 forwards;
+
+    background: linear-gradient(to right,
+            white var(--bar-width),
+            transparent var(--bar-width) calc(100% - var(--bar-width)),
+            white calc(100% - var(--bar-width)));
+
+    content: "";
+
+    transform: scaleY(var(--bar-scale-y));
+}
+
+/* questions */
+
+
+
+.box {
+    width: 75%;
+    margin-left: 280px;
+    padding: 30px;
+    background-color: rgba(77, 76, 76, 0.6);
+}
+
+.box h4 {
+    padding-bottom: 20px;
+}
+
+.box h4 a {
+    font-size: 30px;
+    color: aliceblue;
+    text-decoration: none;
+    transition: 0.4s;
+    text-transform: uppercase;
+}
+
+.box h4 a:hover {
+    color: tomato;
+}
+
+
+
+
+
+
+
+
+/* copyright */
+
+.copyright {
+    height: 2rem;
+    width: 100%;
+    /* border: 1px solid white; */
+    padding-top: 15px;
+}
+
+.copyright p {
+    font-size: 10px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.675);
+    font-family: 'netflix_medium';
+}
